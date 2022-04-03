@@ -1,4 +1,5 @@
 import 'package:artem_web/services/gradients.dart';
+import 'package:artem_web/widgets/artem_logo.dart';
 import 'package:flutter/material.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -15,6 +16,9 @@ class _LandingScreenState extends State<LandingScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: const ArtemLogo(),
+        leadingWidth: 350,
+        toolbarHeight: 80,
       ),
       extendBodyBehindAppBar: true,
       body: Container(
