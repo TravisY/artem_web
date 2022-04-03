@@ -1,5 +1,6 @@
 import 'package:artem_web/services/gradients.dart';
 import 'package:artem_web/widgets/artem_logo.dart';
+import 'package:artem_web/widgets/fyto_pool_button.dart';
 import 'package:flutter/material.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -19,6 +20,9 @@ class _LandingScreenState extends State<LandingScreen> {
         leading: const ArtemLogo(),
         leadingWidth: 350,
         toolbarHeight: 80,
+        actions: const [
+          FytoPoolButton(),
+        ],
       ),
       extendBodyBehindAppBar: true,
       body: Container(
