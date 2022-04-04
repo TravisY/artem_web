@@ -1,6 +1,7 @@
 import 'package:artem_web/services/gradients.dart';
 import 'package:artem_web/widgets/artem_logo.dart';
 import 'package:artem_web/widgets/fyto_pool_button.dart';
+import 'package:artem_web/widgets/phone_images.dart';
 import 'package:flutter/material.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -29,9 +30,12 @@ class _LandingScreenState extends State<LandingScreen> {
         decoration: BoxDecoration(
           gradient: gradientSwitch(context),
         ),
-        child: const Center(
-          child: Text(
-            'here',
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              PhoneImages(),
+            ],
           ),
         ),
       ),
