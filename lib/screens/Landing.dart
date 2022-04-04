@@ -1,6 +1,7 @@
 import 'package:artem_web/services/gradients.dart';
 import 'package:artem_web/widgets/artem_logo.dart';
 import 'package:artem_web/widgets/fyto_pool_button.dart';
+import 'package:artem_web/widgets/icon_workflow.dart';
 import 'package:artem_web/widgets/phone_images.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +36,10 @@ class _LandingScreenState extends State<LandingScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               PhoneImages(),
+              SizedBox(
+                height: 40,
+              ),
+              IconWorkflow(),
             ],
           ),
         ),
