@@ -1,3 +1,4 @@
+import 'package:artem_web/services/artem_web_icons.dart';
 import 'package:flutter/material.dart';
 
 enum WorkflowStep {
@@ -41,11 +42,12 @@ class IconWorkFlowSwitch extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (step) {
       case WorkflowStep.cardano:
-        return _item(context, 'Access your NFTs', Icons.network_ping_sharp);
+        return _item(
+            context, 'Access your NFTs', ArtemWeb.cardano_logo_svgrepo_com);
       case WorkflowStep.ipfs:
-        return _item(context, 'Export from IPFS', Icons.download);
+        return _item(context, 'Export from IPFS', ArtemWeb.ipfs_svgrepo_com);
       case WorkflowStep.share:
-        return _item(context, 'Store and share', Icons.mobile_screen_share);
+        return _item(context, 'Store and share', Icons.wallpaper_sharp);
     }
   }
 
