@@ -1,5 +1,6 @@
 import 'package:artem_web/services/artem_web_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 enum WorkflowStep {
   cardano,
@@ -11,17 +12,21 @@ class IconWorkflow extends StatelessWidget {
   const IconWorkflow({Key? key}) : super(key: key);
 
   Widget arrow(BuildContext context) {
-    return Icon(
-      Icons.arrow_forward_rounded,
-      color: Theme.of(context).colorScheme.primary,
-      size: 60,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: Icon(
+        Icons.arrow_forward_rounded,
+        color: Theme.of(context).colorScheme.primary,
+        size: 60,
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const IconWorkFlowSwitch(step: WorkflowStep.cardano),
         arrow(context),
@@ -64,10 +69,10 @@ class IconWorkFlowSwitch extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(
+          style: GoogleFonts.roboto(
             color: Theme.of(context).colorScheme.primary,
-            fontSize: 24,
-            fontWeight: FontWeight.w100,
+            fontSize: 18,
+            fontWeight: FontWeight.w300,
           ),
         ),
       ],

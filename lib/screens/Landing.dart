@@ -4,6 +4,7 @@ import 'package:artem_web/widgets/fyto_pool_button.dart';
 import 'package:artem_web/widgets/icon_workflow.dart';
 import 'package:artem_web/widgets/phone_images.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -34,12 +35,25 @@ class _LandingScreenState extends State<LandingScreen> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              PhoneImages(),
-              SizedBox(
+            children: [
+              const PhoneImages(),
+              const SizedBox(
                 height: 40,
               ),
-              IconWorkflow(),
+              const IconWorkflow(),
+              const SizedBox(
+                height: 40,
+              ),
+              Center(
+                child: Text(
+                  'Launching Early May',
+                  style: GoogleFonts.roboto(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              )
             ],
           ),
         ),
