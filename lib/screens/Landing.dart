@@ -1,4 +1,5 @@
 import 'package:artem_web/services/gradients.dart';
+import 'package:artem_web/services/responsive_widget.dart';
 import 'package:artem_web/widgets/artem_logo.dart';
 import 'package:artem_web/widgets/fyto_pool_button.dart';
 import 'package:artem_web/widgets/icon_workflow.dart';
@@ -29,32 +30,42 @@ class _LandingScreenState extends State<LandingScreen> {
       ),
       extendBodyBehindAppBar: true,
       body: Container(
+        padding: const EdgeInsets.only(
+          left: 10,
+          right: 10,
+          top: 80,
+        ),
         decoration: BoxDecoration(
           gradient: gradientSwitch(context),
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const PhoneImages(),
-              const SizedBox(
-                height: 40,
-              ),
-              const IconWorkflow(),
-              const SizedBox(
-                height: 40,
-              ),
-              Center(
-                child: Text(
-                  'Launching Early May',
-                  style: GoogleFonts.roboto(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w900,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const PhoneImages(),
+                const SizedBox(
+                  height: 40,
+                ),
+                const IconWorkflow(),
+                const SizedBox(
+                  height: 40,
+                ),
+                Center(
+                  child: Text(
+                    'Launching Early May',
+                    style: GoogleFonts.roboto(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
-              )
-            ],
+                SizedBox(
+                  height: ResponsiveWidget.isSmallScreen(context) ? 40 : 0,
+                ),
+              ],
+            ),
           ),
         ),
       ),

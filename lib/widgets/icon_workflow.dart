@@ -1,6 +1,8 @@
 import 'package:artem_web/services/artem_web_icons.dart';
+import 'package:artem_web/services/responsive_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:math' as math;
 
 enum WorkflowStep {
   cardano,
@@ -14,26 +16,42 @@ class IconWorkflow extends StatelessWidget {
   Widget arrow(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40.0),
-      child: Icon(
-        Icons.arrow_forward_rounded,
-        color: Theme.of(context).colorScheme.primary,
-        size: 60,
+      child: Transform.rotate(
+        angle: ResponsiveWidget.isSmallScreen(context) ? 90 * math.pi / 180 : 0,
+        child: Icon(
+          Icons.arrow_forward_rounded,
+          color: Theme.of(context).colorScheme.primary,
+          size: 60,
+        ),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const IconWorkFlowSwitch(step: WorkflowStep.cardano),
-        arrow(context),
-        const IconWorkFlowSwitch(step: WorkflowStep.ipfs),
-        arrow(context),
-        const IconWorkFlowSwitch(step: WorkflowStep.share),
-      ],
+    return ResponsiveWidget(
+      largeScreen: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const IconWorkFlowSwitch(step: WorkflowStep.cardano),
+          arrow(context),
+          const IconWorkFlowSwitch(step: WorkflowStep.ipfs),
+          arrow(context),
+          const IconWorkFlowSwitch(step: WorkflowStep.share),
+        ],
+      ),
+      smallScreen: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const IconWorkFlowSwitch(step: WorkflowStep.cardano),
+          arrow(context),
+          const IconWorkFlowSwitch(step: WorkflowStep.ipfs),
+          arrow(context),
+          const IconWorkFlowSwitch(step: WorkflowStep.share),
+        ],
+      ),
     );
   }
 }
