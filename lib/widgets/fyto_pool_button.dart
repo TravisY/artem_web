@@ -1,3 +1,4 @@
+import 'package:artem_web/services/brightness_check.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
@@ -17,7 +18,9 @@ class FytoPoolButton extends StatelessWidget {
               color: Colors.transparent,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
-                    color: Theme.of(context).colorScheme.primary, width: 1),
+                  color: colorSelector(context),
+                  width: 1,
+                ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(20),
                 ),
@@ -32,7 +35,7 @@ class FytoPoolButton extends StatelessWidget {
                 child: Text(
                   'Fyto Pool',
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: colorSelector(context),
                     fontWeight: FontWeight.w400,
                   ),
                 ),

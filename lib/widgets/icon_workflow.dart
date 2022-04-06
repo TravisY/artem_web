@@ -1,4 +1,5 @@
 import 'package:artem_web/services/artem_web_icons.dart';
+import 'package:artem_web/services/brightness_check.dart';
 import 'package:artem_web/services/responsive_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,7 @@ class IconWorkflow extends StatelessWidget {
         angle: ResponsiveWidget.isSmallScreen(context) ? 90 * math.pi / 180 : 0,
         child: Icon(
           Icons.arrow_forward_rounded,
-          color: Theme.of(context).colorScheme.primary,
+          color: colorSelector(context),
           size: 60,
         ),
       ),
@@ -79,7 +80,7 @@ class IconWorkFlowSwitch extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: Theme.of(context).colorScheme.primary,
+          color: colorSelector(context),
           size: 80,
         ),
         const SizedBox(
@@ -88,7 +89,7 @@ class IconWorkFlowSwitch extends StatelessWidget {
         Text(
           text,
           style: GoogleFonts.roboto(
-            color: Theme.of(context).colorScheme.primary,
+            color: colorSelector(context),
             fontSize: 18,
             fontWeight: FontWeight.w300,
           ),

@@ -1,3 +1,4 @@
+import 'package:artem_web/services/brightness_check.dart';
 import 'package:artem_web/services/gradients.dart';
 import 'package:artem_web/services/responsive_widget.dart';
 import 'package:artem_web/widgets/artem_logo.dart';
@@ -55,7 +56,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   child: Text(
                     'Launching Early May',
                     style: GoogleFonts.roboto(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: colorSelector(context),
                       fontSize: 32,
                       fontWeight: FontWeight.w900,
                     ),

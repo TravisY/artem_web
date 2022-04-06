@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../services/brightness_check.dart';
+
 class ArtemLogo extends StatelessWidget {
   const ArtemLogo({Key? key}) : super(key: key);
   @override
@@ -21,7 +23,7 @@ class ArtemLogo extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
-          color: Theme.of(context).colorScheme.primary,
+          color: colorSelector(context),
         ),
       ),
       child: Padding(
@@ -29,7 +31,7 @@ class ArtemLogo extends StatelessWidget {
         child: Text(
           letter,
           style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
+              color: colorSelector(context),
               fontWeight: FontWeight.bold,
               fontSize: 20),
         ),
